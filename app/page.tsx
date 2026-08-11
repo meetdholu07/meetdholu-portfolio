@@ -38,7 +38,7 @@ const projectStack = [
   "Socket.IO",
   "Firebase",
   "Vercel",
-  "Postman"
+  "Postman",
 ];
 
 const features = [
@@ -70,13 +70,13 @@ const features = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeImage, setActiveImage] = useState<number | null>(null);
+  const [activeImage, setActiveImage] = useState(null);
 
   /*
    * Reveal sections when they enter the viewport.
    */
   useEffect(() => {
-    const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
+    const revealElements = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -101,7 +101,7 @@ export default function Home() {
    * Close image modal with Escape.
    */
   useEffect(() => {
-    const handleKeyboard = (event: KeyboardEvent) => {
+    const handleKeyboard = (event) => {
       if (event.key === "Escape") {
         setActiveImage(null);
       }
@@ -167,6 +167,10 @@ export default function Home() {
 
           <a href="#project" onClick={closeMenu}>
             Project
+          </a>
+
+          <a href="#experience" onClick={closeMenu}>
+            Experience
           </a>
 
           <a href="#education" onClick={closeMenu}>
@@ -495,6 +499,7 @@ export default function Home() {
             <button
               className="shot"
               key={s[0]}
+              type="button"
               onClick={() => setActiveImage(i)}
             >
               <Image
@@ -504,6 +509,7 @@ export default function Home() {
                 sizes="(max-width: 700px) 100vw, 25vw"
                 loading="lazy"
               />
+
               <span>{s[1]}</span>
             </button>
           ))}
@@ -528,7 +534,121 @@ export default function Home() {
             >
               GitHub ↗
             </a>
+          </div>
+        </div>
+      </section>
 
+      {/* ================= EXPERIENCE ================= */}
+
+      <section
+        id="experience"
+        className="wrap section lineTop reveal"
+      >
+        <div className="label">04 — EXPERIENCE</div>
+
+        <div className="experienceHeader">
+          <div>
+            <small>COLLEGE INTERNSHIP · 6TH SEMESTER</small>
+
+            <h2>Backend &amp; Database Developer Intern</h2>
+
+            <h3>Infinitie Technologies</h3>
+
+            <p className="location">
+              Bhuj, Mirjapar Part, Gujarat 370001
+            </p>
+          </div>
+
+          <div className="experienceBadge">
+            <span>INTERNSHIP PROJECT</span>
+            <b>Campus Connect</b>
+          </div>
+        </div>
+
+        <div className="experienceContent">
+          <div>
+            <p className="big">
+              Developed <b>Campus Connect</b>, a private social media
+              application created specifically for college students,
+              as part of my BCA 6th-semester internship.
+            </p>
+
+            <p>
+              Worked in a two-member development team. My teammate
+              handled the Flutter frontend, while I handled the backend
+              and database development.
+            </p>
+          </div>
+
+          <div className="experienceStack">
+            <small>MY RESPONSIBILITIES</small>
+
+            <ul>
+              <li>MongoDB database design and collections</li>
+              <li>REST APIs, routes and controllers</li>
+              <li>OTP-based student email verification</li>
+              <li>Authentication and JWT/session handling</li>
+              <li>CRUD operations</li>
+              <li>Real-time communication with Socket.IO</li>
+              <li>Firebase notifications</li>
+              <li>Admin moderation and reports</li>
+              <li>Backend deployment with Vercel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="experienceFeatures">
+          <div>
+            <span>01</span>
+
+            <div>
+              <h3>Student-only authentication</h3>
+
+              <p>
+                Implemented college email verification with OTP so
+                only eligible students could register on the platform.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <span>02</span>
+
+            <div>
+              <h3>Backend &amp; database</h3>
+
+              <p>
+                Designed MongoDB collections and developed backend
+                APIs for users, posts, comments, groups, messages,
+                stories, events, announcements and notifications.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <span>03</span>
+
+            <div>
+              <h3>Real-time features</h3>
+
+              <p>
+                Implemented real-time group communication using
+                Socket.IO and integrated Firebase for notifications.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <span>04</span>
+
+            <div>
+              <h3>Admin moderation</h3>
+
+              <p>
+                Added backend functionality for reports, blocking
+                and admin actions to help control unwanted activity.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -539,7 +659,7 @@ export default function Home() {
         id="education"
         className="wrap section reveal"
       >
-        <div className="label">04 — EDUCATION</div>
+        <div className="label">05 — EDUCATION</div>
 
         <div className="edu">
           <div className="date">
@@ -575,7 +695,7 @@ export default function Home() {
         className="wrap section contact lineTop reveal"
       >
         <div>
-          <div className="label">05 — CONTACT</div>
+          <div className="label">06 — CONTACT</div>
 
           <h2>
             Ready for the
