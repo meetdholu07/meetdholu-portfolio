@@ -13,7 +13,7 @@ const skills = [
   ["07", "Firebase"],
   ["08", "Vercel"],
   ["09", "HTML"],
-  ["10", "C"],
+  ["10", "C language"],
   ["11", "Figma"],
   ["12", "GitHub"],
   ["13", "Postman"],
@@ -70,7 +70,7 @@ const features = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeImage, setActiveImage] = useState<number | null>(null);
 
   /*
    * Reveal sections when they enter the viewport.
@@ -101,7 +101,7 @@ export default function Home() {
    * Close image modal with Escape.
    */
   useEffect(() => {
-    const handleKeyboard = (event) => {
+    const handleKeyboard = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setActiveImage(null);
       }
@@ -499,7 +499,6 @@ export default function Home() {
             <button
               className="shot"
               key={s[0]}
-              type="button"
               onClick={() => setActiveImage(i)}
             >
               <Image
@@ -528,7 +527,7 @@ export default function Home() {
           <div className="buttons">
             <a
               className="btn dark"
-              href="https://github.com/meet-dholu/campus-connect"
+              href="https://github.com/meetdholu07/campus-connect"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -548,9 +547,13 @@ export default function Home() {
 
         <div className="experienceHeader">
           <div>
-            <small>COLLEGE INTERNSHIP · 6TH SEMESTER</small>
+            <small>
+              COLLEGE INTERNSHIP · 6TH SEMESTER
+            </small>
 
-            <h2>Backend &amp; Database Developer Intern</h2>
+            <h2>
+              Backend &amp; Database Developer Intern
+            </h2>
 
             <h3>Infinitie Technologies</h3>
 
@@ -597,7 +600,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="experienceFeatures">
+        {/* <div className="experienceFeatures">
           <div>
             <span>01</span>
 
@@ -650,7 +653,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ================= EDUCATION ================= */}
@@ -711,27 +714,27 @@ export default function Home() {
         </div>
 
         <div className="contactList">
-          <a href="mailto:meet.dholu@example.com">
+          <a href="mailto:meetdholu33@gmail.com">
             <span>EMAIL</span>
-            <b>meet.dholu@example.com ↗</b>
+            <b>meetdholu33@gmail.com ↗</b>
           </a>
 
           <a
-            href="https://github.com/meet-dholu"
+            href="https://github.com/meetdholu07"
             target="_blank"
             rel="noopener noreferrer"
           >
             <span>GITHUB</span>
-            <b>github.com/meet-dholu ↗</b>
+            <b>github.com/meetdholu07 ↗</b>
           </a>
 
           <a
-            href="https://www.linkedin.com/in/meet-dholu"
-            target="_blank"
-            rel="noopener noreferrer"
+            // href="https://www.linkedin.com/in/meet-dholu"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
-            <span>LINKEDIN</span>
-            <b>linkedin.com/in/meet-dholu ↗</b>
+            <span>CONTACT NO.</span>
+            <b>+91 9510519330 ↗</b>
           </a>
         </div>
       </section>
@@ -749,36 +752,38 @@ export default function Home() {
       {/* ================= IMAGE MODAL ================= */}
 
       {activeImage !== null && (
-        <div
-          className="modal"
-          role="dialog"
-          aria-modal="true"
-          aria-label={shots[activeImage][1]}
-          onClick={() => setActiveImage(null)}
-        >
-          <button
-            type="button"
-            aria-label="Close image"
-            onClick={() => setActiveImage(null)}
-          >
-            ×
-          </button>
+  <div
+    className="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label={shots[activeImage][1]}
+    onClick={() => setActiveImage(null)}
+  >
+    <button
+      type="button"
+      aria-label="Close image"
+      onClick={() => setActiveImage(null)}
+    >
+      ×
+    </button>
 
-          <div
-            className="modalImg"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <Image
-              src={`/project/${shots[activeImage][0]}`}
-              alt={shots[activeImage][1]}
-              fill
-              sizes="90vw"
-            />
+    <div
+      className="modalImg"
+      onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+        event.stopPropagation()
+      }
+    >
+      <Image
+        src={`/project/${shots[activeImage][0]}`}
+        alt={shots[activeImage][1]}
+        fill
+        sizes="90vw"
+      />
 
-            <p>{shots[activeImage][1]}</p>
-          </div>
-        </div>
-      )}
+      <p>{shots[activeImage][1]}</p>
+    </div>
+  </div>
+)}
     </main>
   );
 }

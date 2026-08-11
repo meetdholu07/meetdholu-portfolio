@@ -1474,6 +1474,198 @@ h1 {
   color: var(--text);
 }
 
+/* ================================
+   EXPERIENCE
+================================ */
+
+.experienceHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  padding: 35px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experienceHeader small {
+  display: block;
+  font: 9px "DM Mono";
+  color: #777a80;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.experienceHeader h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin: 0;
+  max-width: 750px;
+}
+
+.experienceHeader h3 {
+  font-size: 20px;
+  margin: 18px 0 5px;
+  color: var(--accent);
+}
+
+.location {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.experienceBadge {
+  min-width: 180px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.experienceBadge span {
+  display: block;
+  font: 9px "DM Mono";
+  color: #777a80;
+  margin-bottom: 8px;
+}
+
+.experienceBadge b {
+  font-size: 14px;
+}
+
+.experienceContent {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  padding: 55px 0;
+}
+
+.experienceContent .big {
+  font-size: 23px;
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+.experienceContent p:not(.big) {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 700px;
+}
+
+.experienceContent b {
+  color: var(--text);
+}
+
+.experienceStack {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.experienceStack small {
+  display: block;
+  font: 9px "DM Mono";
+  color: #777a80;
+  margin-bottom: 18px;
+}
+
+.experienceStack ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experienceStack li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  color: #c7c9cd;
+  font-size: 12px;
+}
+
+.experienceStack li:last-child {
+  border-bottom: 0;
+}
+
+.experienceStack li::before {
+  content: "→";
+  color: var(--accent);
+  margin-right: 9px;
+}
+
+.experienceFeatures {
+  border-top: 1px solid var(--line);
+}
+
+.experienceFeatures > div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experienceFeatures span {
+  font: 11px "DM Mono";
+  color: var(--accent);
+}
+
+.experienceFeatures h3 {
+  font-size: 18px;
+  margin: 0 0 7px;
+}
+
+.experienceFeatures p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  max-width: 800px;
+}
+
+@media (max-width: 900px) {
+  .experienceHeader {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .experienceContent {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 650px) {
+  .experienceHeader h2 {
+    font-size: 42px;
+  }
+
+  .experienceContent {
+    padding: 40px 0;
+  }
+
+  .experienceContent .big {
+    font-size: 19px;
+  }
+
+  .experienceFeatures > div {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .experienceBadge {
+    width: 100%;
+  }
+}
+
+#experience {
+  padding-bottom: 40px;
+}
+
+#education {
+  padding-top: 40px;
+}
 /* =========================================================
    EDUCATION
 ========================================================= */
