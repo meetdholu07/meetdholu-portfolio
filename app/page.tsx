@@ -365,7 +365,7 @@ export default function Home() {
 
           <p>
             Focused on backend fundamentals, practical APIs and
-            full-stack growth.
+            learning full-stack growth.
           </p>
         </div>
 
@@ -708,7 +708,7 @@ export default function Home() {
 
           <p>
             I&apos;m looking for a fresher/full-time role where I can
-            grow as a backend or full-stack developer and contribute
+            grow as a backend or developer and contribute
             to real software.
           </p>
         </div>
@@ -745,7 +745,7 @@ export default function Home() {
         <span>© 2026 Meet Dholu</span>
 
         <span>
-          Backend · Full-Stack · Always learning
+          Backend · Always learning
         </span>
       </footer>
 
